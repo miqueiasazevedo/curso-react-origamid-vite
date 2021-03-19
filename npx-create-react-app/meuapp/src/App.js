@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
+import Introducao from "./Introducao";
+import Arrays from "./Arrays";
 
 const App = () => {
-    return <div>Meu App</div>
-}
+  return (
+    <>
+      <Introducao />
+      <Arrays />
+    </>
+  );
+};
 
-export default App; 
+export default App;

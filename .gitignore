@@ -8,7 +8,9 @@ logs
 **/*.backup.*
 **/*.back.*
 
+**/.devcontainer/*
 **/node_modules/*
+**/.vscode/*
 bower_components
 
 *.sublime*
@@ -16,5 +18,6 @@ bower_components
 psd
 thumb
 sketch
+
 
 # End of https://www.toptal.com/developers/gitignore/api/react
