@@ -27,12 +27,34 @@ const Arrays = () => {
   return (
     <>
       <hr></hr>
-      <h3>Exercícios - Arrays</h3>
-      <p>
-        {" "}
-        Organize os produtos como mostrado no vídeo <br></br> Mostre apenas
-        produtos que forem mais caros que R$ 1500
-      </p>
+      <details>
+        <summary>
+          <h3 style={{ display: "inline" }}>Exercícios - Arrays</h3>
+        </summary>
+        <p>
+          {" "}
+          Organize os produtos como mostrado no vídeo <br></br> Mostre apenas
+          produtos que forem mais caros que R$ 1500
+        </p>
+
+        <section>
+          {produtos
+            .filter(({ preco }) => preco.replace("R$", "") > 1500)
+            .map(({ id, nome, preco, cores }) => (
+              <div key={id}>
+                <h1>{nome}</h1>
+                <p>Preço: {preco}</p>
+                <ul>
+                  {cores.map((cor) => (
+                    <li key={cor} style={{ backgroundColor: cor }}>
+                      {cor}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+        </section>
+      </details>
     </>
   );
 };

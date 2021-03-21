@@ -47,31 +47,36 @@ const Introducao = () => {
 
   return (
     <>
-      <section>
-        <h3>Atributos HTML e condicionais dentro do JSX</h3>
-        <a
-          className='ativo'
-          style={ativo ? { color: "green" } : { color: "red" }}
-          href='https://www.google.com.br'
-          title='teste'>
-          {nome}
-        </a>
-        <p>{new Date().getFullYear()}</p>
-      </section>
+      <details>
+        <summary>
+          <h3 style={{ display: "inline" }}>Introdução</h3>
+        </summary>
+        <section>
+          <h4>Atributos HTML e condicionais dentro do JSX</h4>
+          <a
+            className='ativo'
+            style={ativo ? { color: "green" } : { color: "red" }}
+            href='https://www.google.com.br'
+            title='teste'>
+            {nome}
+          </a>
+          <p>{new Date().getFullYear()}</p>
+        </section>
 
-      <section>
-        <h3>Formatos de saida como HTML</h3>
-        <h4>Retorno de função</h4>
-        <p>{mostrarNome()}</p>
-        {/* Abaixo uma manei invalida de invocar uma função no JSX - 
-        A função não está sendo executada - Erro no console */}
-        <p>{mostrarNome}</p>
+        <section>
+          <h4>Formatos de saida como HTML</h4>
+          <h4>Retorno de função</h4>
+          <p>{mostrarNome()}</p>
+          {/* Abaixo uma manei invalida de invocar uma função no JSX - 
+          A função não está sendo executada - Erro no console
+          
+          <p>{mostrarNome}</p> */}
 
-        <h4>Exibição de objetos</h4>
-        <p>
-          {carro.marca}, {carro.rodas}
-        </p>
-        {/* Abaixo uma maneira invalida de exibição de um objeto no JSX - 
+          <h4>Exibição de objetos</h4>
+          <p>
+            {carro.marca}, {carro.rodas}
+          </p>
+          {/* Abaixo uma maneira invalida de exibição de um objeto no JSX - 
         Um objeto não é um formato valido para exibição - Somente atibutos deste objeto
         
         <p>
@@ -79,23 +84,24 @@ const Introducao = () => {
         </p>
         
         */}
-      </section>
-      <hr></hr>
+        </section>
+        <hr></hr>
 
-      <section>
-        <h3>Exercicio</h3>
+        <section>
+          <h4>Exercicio</h4>
 
-        <p>Nome: {dados.cliente}</p>
-        <p>Idade: {dados.idade}</p>
-        <p>
-          Situação:
-          <span style={{ color: dados.ativa ? "green" : "red" }}>
-            {dados.ativa ? " Ativo" : " Inativo"}
-          </span>
-        </p>
-        <p>Total gasto: R$ {totalGasto}</p>
-        {totalGasto > 10000 && <strong>Vocẽ está gastando muito</strong>}
-      </section>
+          <p>Nome: {dados.cliente}</p>
+          <p>Idade: {dados.idade}</p>
+          <p>
+            Situação:
+            <span style={{ color: dados.ativa ? "green" : "red" }}>
+              {dados.ativa ? " Ativo" : " Inativo"}
+            </span>
+          </p>
+          <p>Total gasto: R$ {totalGasto}</p>
+          {totalGasto > 10000 && <strong>Vocẽ está gastando muito</strong>}
+        </section>
+      </details>
     </>
   );
 };
