@@ -3,6 +3,7 @@ import Introducao from "./Introducao";
 import Arrays from "./Arrays";
 import Form from "./Form/Form";
 import DesafioProdutos from "./DesafioProdutos/DesafioProdutos";
+import Products from "./LoadProductsUseState/Products";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Arrays />
       <Form />
       <DesafioProdutos />
+      <Products />
     </>
   );
 };
