@@ -6,7 +6,7 @@ function DesafioProdutos() {
   return (
     <div>
       <hr></hr>
-      <details open>
+      <details>
         <summary>
           <h3 style={{ display: "inline" }}>Exercícios - Desafio produtos</h3>
         </summary>
