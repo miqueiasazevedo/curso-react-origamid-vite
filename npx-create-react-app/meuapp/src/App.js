@@ -4,6 +4,7 @@ import Arrays from "./Arrays";
 import Form from "./Form/Form";
 import DesafioProdutos from "./DesafioProdutos/DesafioProdutos";
 import Products from "./LoadProductsUseState/Products";
+import LoadPreferenceProduct from "./LoadPreferenceProductUseEfect/LoadPreferenceProduct";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Form />
       <DesafioProdutos />
       <Products />
+      <LoadPreferenceProduct />
     </>
   );
 };
