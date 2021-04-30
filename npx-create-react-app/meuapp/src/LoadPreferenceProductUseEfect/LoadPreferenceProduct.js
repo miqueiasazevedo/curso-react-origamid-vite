@@ -4,42 +4,19 @@ import ProductItem from "./ProductItem";
 
 const LoadPreferenceProduct = () => {
   const [Product, setProduct] = React.useState(null);
-  const [loading, setLoading] = React.useState(null);
-
-  let productName;
 
   React.useEffect(() => {
-    productName = localStorage.getItem("Prefer product");
-
-    if (productName) {
-      fetchProduct(productName);
-    }
+    const localProduct = localStorage.getItem("prefer_product");
+    if (localProduct) setProduct(localProduct);
   }, []);
 
-  const handleClick = (event) => {
-    productName = event.target.innerText;
-
-    fetchProduct(productName);
-    setPreferenceOnLocalStorage(productName);
-  };
+  React.useEffect(() => {
+    if (Product) setPreferenceOnLocalStorage(Product);
+  }, [Product]);
 
   const setPreferenceOnLocalStorage = (productName) => {
-    localStorage.setItem("Prefer product", productName);
+    localStorage.setItem("prefer_product", productName);
   };
-
-  async function fetchProduct(productName) {
-    setLoading(true);
-
-    const response = await fetch(
-      `https://ranekapi.origamid.dev/json/api/produto/${productName}`
-    );
-
-    const json = await response.json();
-
-    setProduct(json);
-
-    setLoading(false);
-  }
 
   return (
     <>
@@ -50,7 +27,7 @@ const LoadPreferenceProduct = () => {
             Exercícios - useEfect - Carregando produto de preferência
           </h3>
         </summary>
-        <p>
+        <p style={{ borderBottom: "1px solid", paddingBottom: "1rem" }}>
           {" "}
           Quando o usuário clicar em um dos botões, faça um fetch do produto
           clicado utilizando a api abaixo <br />
@@ -64,11 +41,11 @@ const LoadPreferenceProduct = () => {
           faça o fetch do mesmo <br />
         </p>
         <section>
-          <Button text='tablet' handleClick={handleClick} />
-          <Button text='notebook' handleClick={handleClick} />
-          <Button text='smartphone' handleClick={handleClick} />
-          {loading && <p>Carregando...</p>}
-          {!loading && Product && <ProductItem product={Product} />}
+          <h1>Preferência: {Product}</h1>
+          <Button text='tablet' setProduct={setProduct} />
+          <Button text='notebook' setProduct={setProduct} />
+          <Button text='smartphone' setProduct={setProduct} />
+          <ProductItem product={Product} />
         </section>
       </details>
     </>
