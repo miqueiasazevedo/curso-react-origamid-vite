@@ -1,6 +1,10 @@
 import React from "react";
 
-const Button = ({ text, handleClick }) => {
+const Button = ({ text, setProduct }) => {
+  const handleClick = (event) => {
+    setProduct(event.target.innerText);
+  };
+
   return (
     <button
       onClick={handleClick}
