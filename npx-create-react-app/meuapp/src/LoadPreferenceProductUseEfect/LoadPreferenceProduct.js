@@ -21,7 +21,7 @@ const LoadPreferenceProduct = () => {
   return (
     <>
       <hr></hr>
-      <details open>
+      <details>
         <summary>
           <h3 style={{ display: "inline" }}>
             Exercícios - useEfect - Carregando produto de preferência
