@@ -7,6 +7,7 @@ import Products from "./LoadProductsUseState/Products";
 import LoadPreferenceProduct from "./LoadPreferenceProductUseEfect/LoadPreferenceProduct";
 import Product from "./LoadProductWithUseContext/Product";
 import { GlobalStorage } from "./LoadProductWithUseContext/GlobalContext";
+import SubmitForm from "./SubmitForm/SubmitForm";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <GlobalStorage>
         <Product />
       </GlobalStorage>
+      <SubmitForm />
     </>
   );
 };
