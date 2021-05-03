@@ -5,7 +5,6 @@ const Product = () => {
   const global = React.useContext(GlobalContext);
 
   if (global.Products === null) return null;
-  console.log(global);
   return (
     <>
       <hr></hr>
