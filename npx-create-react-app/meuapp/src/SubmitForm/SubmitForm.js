@@ -86,7 +86,7 @@ const SubmitForm = () => {
   return (
     <>
       <hr></hr>
-      <details open>
+      <details>
         <summary>
           <h3 style={{ display: "inline" }}>Exercícios - Submit Form</h3>
         </summary>
