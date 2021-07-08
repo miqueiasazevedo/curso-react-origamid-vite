@@ -54,7 +54,10 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input,
+input[type="text"],
+input[type="select"],
+input[type="password"],
+input[type="email"],
 textarea {
   display: block;
   border: 1px solid #ccc;
@@ -72,6 +75,13 @@ textarea:focus {
   border-color: var(--color);
   background: white;
   box-shadow: 0 0 0 3px var(--color-light);
+}
+
+legend {
+  padding: 0.5rem;
+}
+fieldset {
+  margin: 1rem;
 }
 
 button {

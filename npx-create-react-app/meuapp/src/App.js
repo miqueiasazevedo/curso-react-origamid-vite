@@ -8,20 +8,30 @@ import LoadPreferenceProduct from "./LoadPreferenceProductUseEfect/LoadPreferenc
 import Product from "./LoadProductWithUseContext/Product";
 import { GlobalStorage } from "./LoadProductWithUseContext/GlobalContext";
 import SubmitForm from "./SubmitForm/SubmitForm";
+import FormStep from "./MultiStepForm/FormStep";
 
 const App = () => {
   return (
     <>
-      <Introducao />
-      <Arrays />
-      <Form />
-      <DesafioProdutos />
-      <Products />
-      <LoadPreferenceProduct />
+      <FormStep />
+
+      <SubmitForm />
+
       <GlobalStorage>
         <Product />
       </GlobalStorage>
-      <SubmitForm />
+
+      <LoadPreferenceProduct />
+
+      <Products />
+
+      <DesafioProdutos />
+
+      <Form />
+
+      <Arrays />
+
+      <Introducao />
     </>
   );
 };

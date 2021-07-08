@@ -47,6 +47,7 @@ const Introducao = () => {
 
   return (
     <>
+      <hr />
       <details>
         <summary>
           <h3 style={{ display: "inline" }}>Introdução</h3>
