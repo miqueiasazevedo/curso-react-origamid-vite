@@ -45,18 +45,21 @@ function FormStep() {
 
   const [step, setStep] = React.useState(0);
   const [resultado, setResultado] = React.useState(null);
+
   const [answeredQuestion, setAnsweredQuestion] = React.useState(false);
 
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
+
+    setAnsweredQuestion(true);
   }
 
   function handleNext() {
-    let notLast = step < perguntas.length - 1;
-    setAnsweredQuestion(Object.values(respostas)[step] !== ""); //TODO Verificar pq o estado não está sendo aterando, causando o false no if abaixo
+    let notLastQuestion = step < perguntas.length - 1;
 
-    if (notLast && answeredQuestion) {
+    if (notLastQuestion && answeredQuestion) {
       setStep(step + 1);
+      setAnsweredQuestion(false);
     } else if (step === perguntas.length - 1) {
       setStep(step + 1);
       finalResult();
@@ -66,6 +69,11 @@ function FormStep() {
   function handlePrevious() {
     if (step > 0) {
       setStep(step - 1);
+
+      /* TODO Verificar como validar se a resposta está marcada ao navegar para a pergunta anterior;
+      Se sim, permitir a navegação para a próxima pergunta normalmente; */
+      setAnsweredQuestion(Object.values(respostas)[step] !== "");
+      console.log(`Passo ${step} ${answeredQuestion}`);
     }
   }
 
