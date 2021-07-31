@@ -51,29 +51,42 @@ function FormStep() {
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
 
-    setAnsweredQuestion(true);
+/*     setAnsweredQuestion(true); */
+  }
+
+  function verifyIfAnswered(){
+  setAnsweredQuestion(Object.values(respostas)[step] !== " ");
+    console.log(`1 - ${answeredQuestion}, Valor: ${Object.values(respostas)[step]}`);
+
+    if(answeredQuestion){
+      console.log(`Passo: ${step}- Respondido: ${answeredQuestion}`);
+      return true;
+    }
+
+    return false;
+
+    /* TODO Verificar como validar se a resposta está marcada ao navegar para a pergunta anterior;
+    Se sim, permitir a navegação para a próxima pergunta normalmente; */
+    
+  }
+
+  function handlePrevious() {
+    if (step > 0) {
+      verifyIfAnswered();
+      setStep(step - 1);
+      setAnsweredQuestion(false);
+    }
   }
 
   function handleNext() {
     let notLastQuestion = step < perguntas.length - 1;
 
-    if (notLastQuestion && answeredQuestion) {
+    if (notLastQuestion && verifyIfAnswered()) {
       setStep(step + 1);
       setAnsweredQuestion(false);
     } else if (step === perguntas.length - 1) {
       setStep(step + 1);
       finalResult();
-    }
-  }
-
-  function handlePrevious() {
-    if (step > 0) {
-      setStep(step - 1);
-
-      /* TODO Verificar como validar se a resposta está marcada ao navegar para a pergunta anterior;
-      Se sim, permitir a navegação para a próxima pergunta normalmente; */
-      setAnsweredQuestion(Object.values(respostas)[step] !== "");
-      console.log(`Passo ${step} ${answeredQuestion}`);
     }
   }
 

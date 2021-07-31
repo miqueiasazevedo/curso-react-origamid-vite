@@ -5,7 +5,7 @@ function Input({ pergunta, options, id, onChange, value, active }) {
   return (
     <div>
       <fieldset>
-        <p>{pergunta}</p>
+        <legend><strong>{pergunta}</strong></legend>
         {options.map((option, index) => (
           <label key={index}>
             <input
