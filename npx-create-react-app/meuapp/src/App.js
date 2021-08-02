@@ -9,10 +9,13 @@ import Product from "./LoadProductWithUseContext/Product";
 import { GlobalStorage } from "./LoadProductWithUseContext/GlobalContext";
 import SubmitForm from "./SubmitForm/SubmitForm";
 import FormStep from "./MultiStepForm/FormStep";
+import Slide from "./Slider/Slide";
 
 const App = () => {
   return (
     <>
+      <Slide />
+
       <FormStep />
 
       <SubmitForm />
