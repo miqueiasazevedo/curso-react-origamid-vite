@@ -51,14 +51,16 @@ function FormStep() {
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
 
-/*     setAnsweredQuestion(true); */
+    /*     setAnsweredQuestion(true); */
   }
 
-  function verifyIfAnswered(){
-  setAnsweredQuestion(Object.values(respostas)[step] !== " ");
-    console.log(`1 - ${answeredQuestion}, Valor: ${Object.values(respostas)[step]}`);
+  function verifyIfAnswered() {
+    setAnsweredQuestion(Object.values(respostas)[step] !== " ");
+    console.log(
+      `1 - ${answeredQuestion}, Valor: ${Object.values(respostas)[step]}`
+    );
 
-    if(answeredQuestion){
+    if (answeredQuestion) {
       console.log(`Passo: ${step}- Respondido: ${answeredQuestion}`);
       return true;
     }
@@ -67,7 +69,6 @@ function FormStep() {
 
     /* TODO Verificar como validar se a resposta está marcada ao navegar para a pergunta anterior;
     Se sim, permitir a navegação para a próxima pergunta normalmente; */
-    
   }
 
   function handlePrevious() {
