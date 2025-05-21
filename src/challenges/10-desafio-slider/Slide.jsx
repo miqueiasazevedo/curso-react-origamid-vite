@@ -127,7 +127,7 @@ export default function Slide() {
                 className='previous'></NavigateButton>
               <NavigateButton
                 onClick={handleNext}
-                lassName='next'></NavigateButton>
+                className='next'></NavigateButton>
             </ContainerNavigation>
           </SlideContainer>
         </section>
