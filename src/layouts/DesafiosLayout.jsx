@@ -1,15 +1,14 @@
-
 import { Link, Outlet } from 'react-router-dom';
 
-export default function Layout() {
+export default function DesafiosLayout() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
       <aside className="w-64 bg-gray-800 text-white flex flex-col p-4">
         <h1 className="text-xl font-bold mb-6">Dashboard</h1>
         <nav className="flex flex-col gap-2">
-          <Link to="/Introducao" className="hover:bg-gray-700 rounded px-2 py-1">Início</Link>
-          <Link to="/" className="hover:bg-gray-700 rounded px-2 py-1">Desafios</Link>
+          <Link to="/desafio" className="hover:bg-gray-700 rounded px-2 py-1">Desafios</Link>
+          <Link to="/desafio/introducao" className="hover:bg-gray-700 rounded px-2 py-1">Introdução</Link>
         </nav>
       </aside>
 
