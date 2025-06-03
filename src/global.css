@@ -17,3 +17,13 @@
     @apply text-blue-600 hover:underline;
   }
 }
+
+@keyframes load-bounce {
+  to {
+    transform: translateY(-0.75rem);
+  }
+}
+
+.load-bounce {
+  animation: load-bounce 1s alternate infinite;
+}

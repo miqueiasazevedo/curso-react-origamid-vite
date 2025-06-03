@@ -1,12 +1,5 @@
 import React from "react";
 import SlideItem from "./SlideItem";
-import {
-  SlideContainer,
-  ContainerNavigation,
-  NavigateButton,
-  ItemsContainer,
-  Load,
-} from "./style";
 
 export default function Slide() {
   const [images, setImages] = React.useState(null);
@@ -104,13 +97,24 @@ export default function Slide() {
         </summary>
         <p> </p>
         <section>
-          <SlideContainer onClick={(e) => e.preventDefault()}>
-            <Load style={!false ? { display: "flex" } : { display: "none" }}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </Load>
-            <ItemsContainer
+          <div
+            className="w-full h-[40vh] min-h-[350px] relative overflow-hidden group"
+            onClick={(e) => e.preventDefault()}>
+            <div
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex"
+              style={!false ? { display: "flex" } : { display: "none" }}>
+              <span className="w-3 h-3 rounded-full bg-black/40 mx-1 load-bounce" />
+              <span
+                className="w-3 h-3 rounded-full bg-black/40 mx-1 load-bounce"
+                style={{ animationDelay: "0.3s" }}
+              />
+              <span
+                className="w-3 h-3 rounded-full bg-black/40 mx-1 load-bounce"
+                style={{ animationDelay: "0.6s" }}
+              />
+            </div>
+            <div
+              className="w-full h-full flex transition-all duration-300 ease-linear"
               onClick={(e) => {
                 e.preventDefault();
               }}
@@ -120,16 +124,21 @@ export default function Slide() {
               ref={slidesItemsContainer}
               style={{ transform: `translateX(${position}px)` }}>
               <SlideItem images={images} onClick={(e) => e.preventDefault()} />
-            </ItemsContainer>
-            <ContainerNavigation>
-              <NavigateButton
+            </div>
+            <div
+              className="w-full flex justify-between px-6 absolute top-1/2 left-0 -translate-y-1/2 opacity-50 transition-opacity duration-200 ease-linear group-hover:opacity-100">
+              <button
                 onClick={handlePrevious}
-                className='previous'></NavigateButton>
-              <NavigateButton
+                className="w-12 h-12 flex justify-center items-center relative rotate-180">
+                &gt;
+              </button>
+              <button
                 onClick={handleNext}
-                className='next'></NavigateButton>
-            </ContainerNavigation>
-          </SlideContainer>
+                className="w-12 h-12 flex justify-center items-center relative">
+                &gt;
+              </button>
+            </div>
+          </div>
         </section>
       </details>
     </>
