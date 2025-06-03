@@ -1,5 +1,3 @@
-import React from "react";
-
 const Introducao = () => {
   const nome = "Miquéias Azevedo";
   const ativo = false;
