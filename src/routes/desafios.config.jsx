@@ -9,11 +9,13 @@ import GlobalStorage from '../challenges/5-desafio-load-products-use-context/Glo
 import SubmitForm from '../challenges/9-desafio-submit-form/SubmitForm';
 import FormStep from '../challenges/8-desafio-multi-step-form/FormStep';
 import Slide from '../challenges/10-desafio-slider/Slide';
+import Produtos from '../challenges/11-desafio-router/Produtos';
+import Contato from '../challenges/11-desafio-router/Contato';
 
 
 const desafios = [
   { path: 'introducao', label: 'Introdução', element: <Introducao /> },
-  { path: 'arrays', label: 'Arrays', element: <Arrays /> },
+  { path: 'arrays', label: 'Arrays', element: <Arrays />, 'menu': [ {path: 'produtos', label: 'Produtos', element: <Produtos/>}] },
   { path: 'forms', label: 'Formulários', element: <Form /> },
   { path: 'produtos', label: 'Produtos', element: <DesafioProdutos /> },
   { path: 'load-produtos', label: 'Produtos carregados', element: <Products /> },
@@ -22,6 +24,12 @@ const desafios = [
   { path: 'form-submit', label: 'Envio de formulário', element: <SubmitForm /> },
   { path: 'form-step', label: 'Formulário por multi-passos', element: <FormStep /> },
   { path: 'slide', label: 'Slide', element: <Slide /> },
+  { path: 'router', label: 'Router', 
+    'menu': [ 
+      {path: 'produtos', label: 'Produtos', element: <Produtos/>}, 
+      {path: 'contato', label: 'Contato', element: <Contato/>} 
+    ]
+  },
 ];
 
 export default desafios;
